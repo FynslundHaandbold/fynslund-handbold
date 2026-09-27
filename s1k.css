@@ -903,6 +903,136 @@ button {
   gap: 20px;
 }
 
+/* =========================================================
+
+   RESULTATBOKS
+
+========================================================= */
+
+.score {
+
+  min-width: 120px;
+
+  padding: 11px 18px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 16px;
+
+  font-size: 26px;
+
+  font-weight: 950;
+
+  line-height: 1;
+
+  letter-spacing: 0.4px;
+
+  box-shadow:
+
+    inset 0 -3px 0 rgba(0, 0, 0, 0.16),
+
+    0 12px 26px rgba(3, 7, 18, 0.16);
+
+}
+
+/* Sejr */
+
+.score.win-score {
+
+  color: #ffffff;
+
+  background: linear-gradient(135deg, #15803d, #22c55e);
+
+}
+
+/* Uafgjort */
+
+.score.draw-score {
+
+  color: #101828;
+
+  background: linear-gradient(135deg, #d97706, #fbbf24);
+
+}
+
+/* Nederlag */
+
+.score.loss-score {
+
+  color: #ffffff;
+
+  background: linear-gradient(135deg, #b91c1c, #ef4444);
+
+}
+
+/* Ikke spillet / kommende kamp */
+
+.score.upcoming-score {
+
+  color: #101828;
+
+  background: linear-gradient(135deg, #e5e7eb, #cbd5e1);
+
+}
+
+/* =========================================================
+
+   RESULTATTEKST UNDER SCORE
+
+========================================================= */
+
+.result-label {
+
+  margin-top: 7px;
+
+  display: block;
+
+  font-size: 9px;
+
+  font-weight: 950;
+
+  letter-spacing: 1.3px;
+
+  text-transform: uppercase;
+
+}
+
+/* Sejr */
+
+.result-label.win-label {
+
+  color: var(--win);
+
+}
+
+/* Uafgjort */
+
+.result-label.draw-label {
+
+  color: var(--draw);
+
+}
+
+/* Nederlag */
+
+.result-label.loss-label {
+
+  color: var(--loss);
+
+}
+
+/* Ikke spillet / kommende kamp */
+
+.result-label.upcoming-label {
+
+  color: var(--muted);
+
+}
+
 .match-ident {
   display: flex;
   align-items: stretch;
