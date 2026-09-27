@@ -826,10 +826,9 @@ button {
 
 .match-grid {
   display: grid;
+  gap: 22px;
 }
    
-KAMPKORT
-========================================================= */
 .match-card {
 
   --card-accent: #94a3b8;
