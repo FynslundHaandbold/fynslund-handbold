@@ -821,7 +821,10 @@ button {
 
 .filter-button.is-active span {
   color: var(--green-900);
-  background: var(--.match-grid {
+  background: var(--white);
+}
+
+.match-grid {
   display: grid;
   gap: 22px;
 }
