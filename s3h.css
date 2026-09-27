@@ -834,73 +834,255 @@ button {
 ========================================================= */
 
 .match-card {
+
   --card-accent: #94a3b8;
+
   --card-soft: rgba(148, 163, 184, 0.13);
 
   position: relative;
+
   isolation: isolate;
+
   overflow: hidden;
+
   padding: 30px;
+
   border: 1px solid rgba(16, 24, 40, 0.08);
+
   border-radius: 27px;
+
   color: var(--text);
+
   background:
+
     radial-gradient(circle at 8% 0%, var(--card-soft), transparent 30%),
+
     linear-gradient(145deg, rgba(255, 255, 255, 0.99), rgba(247, 249, 252, 0.98));
+
   box-shadow: var(--shadow-md);
+
   transition:
+
     transform 0.25s ease,
+
     box-shadow 0.25s ease,
+
     border-color 0.25s ease;
+
 }
 
 .match-card::before {
+
   content: "";
+
   position: absolute;
+
   inset: 0 auto 0 0;
+
   width: 7px;
+
   background: var(--card-accent);
+
 }
 
 .match-card::after {
+
   content: "";
+
   position: absolute;
+
   top: 0;
+
   right: 22px;
+
   left: 22px;
+
   height: 4px;
+
   border-radius: 0 0 999px 999px;
+
   background: linear-gradient(90deg, transparent, var(--card-accent), transparent);
+
   opacity: 0.75;
+
 }
 
 .match-card:hover {
+
   transform: translateY(-5px);
+
   border-color: rgba(16, 24, 40, 0.13);
+
   box-shadow: 0 28px 68px rgba(3, 7, 18, 0.18);
+
 }
 
 .match-card.win {
+
   --card-accent: var(--win);
+
   --card-soft: rgba(22, 163, 74, 0.13);
+
 }
 
 .match-card.draw {
+
   --card-accent: var(--draw);
+
   --card-soft: rgba(245, 158, 11, 0.13);
+
 }
 
 .match-card.loss {
+
   --card-accent: var(--loss);
+
   --card-soft: rgba(220, 38, 38, 0.11);
+
 }
 
 .match-topline {
+
   margin-bottom: 26px;
+
   display: flex;
+
   align-items: flex-start;
+
   justify-content: space-between;
+
   gap: 20px;
+
+}
+
+/* =========================================================
+
+   RESULTATBOKS
+
+========================================================= */
+
+.score {
+
+  min-width: 120px;
+
+  padding: 11px 18px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 16px;
+
+  font-size: 26px;
+
+  font-weight: 950;
+
+  line-height: 1;
+
+  letter-spacing: 0.4px;
+
+  box-shadow:
+
+    inset 0 -3px 0 rgba(0, 0, 0, 0.16),
+
+    0 12px 26px rgba(3, 7, 18, 0.16);
+
+}
+
+/* Sejr */
+
+.score.win-score {
+
+  color: #ffffff;
+
+  background: linear-gradient(135deg, #15803d, #22c55e);
+
+}
+
+/* Uafgjort */
+
+.score.draw-score {
+
+  color: #101828;
+
+  background: linear-gradient(135deg, #d97706, #fbbf24);
+
+}
+
+/* Nederlag */
+
+.score.loss-score {
+
+  color: #ffffff;
+
+  background: linear-gradient(135deg, #b91c1c, #ef4444);
+
+}
+
+/* Ikke spillet / kommende kamp */
+
+.score.upcoming-score {
+
+  color: #101828;
+
+  background: linear-gradient(135deg, #e5e7eb, #cbd5e1);
+
+}
+
+/* =========================================================
+
+   RESULTATTEKST UNDER SCORE
+
+========================================================= */
+
+.result-label {
+
+  margin-top: 7px;
+
+  display: block;
+
+  font-size: 9px;
+
+  font-weight: 950;
+
+  letter-spacing: 1.3px;
+
+  text-transform: uppercase;
+
+}
+
+/* Sejr */
+
+.result-label.win-label {
+
+  color: var(--win);
+
+}
+
+/* Uafgjort */
+
+.result-label.draw-label {
+
+  color: var(--draw);
+
+}
+
+/* Nederlag */
+
+.result-label.loss-label {
+
+  color: var(--loss);
+
+}
+
+/* Ikke spillet / kommende kamp */
+
+.result-label.upcoming-label {
+
+  color: var(--muted);
+
 }
 
 .match-ident {
