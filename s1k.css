@@ -834,73 +834,125 @@ button {
 ========================================================= */
 
 .match-card {
+
   --card-accent: #94a3b8;
+
   --card-soft: rgba(148, 163, 184, 0.13);
 
   position: relative;
+
   isolation: isolate;
+
   overflow: hidden;
+
   padding: 30px;
+
   border: 1px solid rgba(16, 24, 40, 0.08);
+
   border-radius: 27px;
+
   color: var(--text);
+
   background:
+
     radial-gradient(circle at 8% 0%, var(--card-soft), transparent 30%),
+
     linear-gradient(145deg, rgba(255, 255, 255, 0.99), rgba(247, 249, 252, 0.98));
+
   box-shadow: var(--shadow-md);
+
   transition:
+
     transform 0.25s ease,
+
     box-shadow 0.25s ease,
+
     border-color 0.25s ease;
+
 }
 
 .match-card::before {
+
   content: "";
+
   position: absolute;
+
   inset: 0 auto 0 0;
+
   width: 7px;
+
   background: var(--card-accent);
+
 }
 
 .match-card::after {
+
   content: "";
+
   position: absolute;
+
   top: 0;
+
   right: 22px;
+
   left: 22px;
+
   height: 4px;
+
   border-radius: 0 0 999px 999px;
+
   background: linear-gradient(90deg, transparent, var(--card-accent), transparent);
+
   opacity: 0.75;
+
 }
 
 .match-card:hover {
+
   transform: translateY(-5px);
+
   border-color: rgba(16, 24, 40, 0.13);
+
   box-shadow: 0 28px 68px rgba(3, 7, 18, 0.18);
+
 }
 
 .match-card.win {
+
   --card-accent: var(--win);
+
   --card-soft: rgba(22, 163, 74, 0.13);
+
 }
 
 .match-card.draw {
+
   --card-accent: var(--draw);
+
   --card-soft: rgba(245, 158, 11, 0.13);
+
 }
 
 .match-card.loss {
+
   --card-accent: var(--loss);
+
   --card-soft: rgba(220, 38, 38, 0.11);
+
 }
 
 .match-topline {
+
   margin-bottom: 26px;
+
   display: flex;
+
   align-items: flex-start;
+
   justify-content: space-between;
+
   gap: 20px;
+
 }
 
 /* =========================================================
