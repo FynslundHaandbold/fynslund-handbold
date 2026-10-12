@@ -2123,71 +2123,79 @@ a.sponsor-logo:hover {
 ========================================================= */
 
 .cup-section {
-  padding: 92px 20px 108px;
+  padding: 96px 20px 112px;
   background:
-    radial-gradient(circle at 12% 12%, rgba(226, 185, 59, 0.11), transparent 30%),
+    radial-gradient(circle at 12% 12%, rgba(226, 185, 59, 0.13), transparent 31%),
+    radial-gradient(circle at 88% 72%, rgba(22, 163, 74, 0.08), transparent 26%),
     linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
 }
 
-.cup-shell {
+.cup-section .section-shell {
   width: min(100%, var(--container));
   margin: 0 auto;
 }
 
-.cup-heading {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 30px;
-  margin-bottom: 34px;
+
+/* =========================================================
+   POKAL OVERSKRIFT
+========================================================= */
+
+.cup-section .section-header {
+  margin-bottom: 32px;
 }
 
-.cup-heading h2 {
-  margin-top: 10px;
-  font-size: clamp(36px, 4.5vw, 58px);
+.cup-section .section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 10px;
+
+  color: var(--green-700);
+  font-size: 12px;
   font-weight: 950;
-  line-height: 1;
-  letter-spacing: -2px;
-}
-
-.cup-heading p {
-  max-width: 720px;
-  margin-top: 14px;
-  color: var(--muted);
-  font-size: 14px;
-  font-weight: 550;
-}
-
-.cup-badge {
-  min-width: 132px;
-  padding: 15px 18px;
-  display: grid;
-  place-items: center;
-  border: 1px solid rgba(226, 185, 59, 0.3);
-  border-radius: 18px;
-  color: var(--navy-950);
-  background: linear-gradient(135deg, var(--gold-400), var(--gold-500));
-  box-shadow: 0 14px 32px rgba(226, 185, 59, 0.26);
-}
-
-.cup-badge strong {
-  font-size: 24px;
-  font-weight: 950;
-  line-height: 1;
-}
-
-.cup-badge span {
-  margin-top: 4px;
-  font-size: 9px;
-  font-weight: 950;
-  letter-spacing: 1.2px;
+  letter-spacing: 1.6px;
   text-transform: uppercase;
+}
+
+.cup-section .section-kicker::before {
+  content: "";
+  width: 26px;
+  height: 3px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.cup-section .section-header h2 {
+  margin-top: 6px;
+
+  color: var(--navy-950);
+  font-size: clamp(38px, 4.8vw, 62px);
+  font-weight: 950;
+  line-height: 0.95;
+  letter-spacing: -2.2px;
+}
+
+.cup-section .section-header p {
+  max-width: 850px;
+  margin-top: 16px;
+
+  color: #1f2937;
+  font-size: 15px;
+  font-weight: 750;
+  line-height: 1.7;
 }
 
 
 /* =========================================================
    POKALKORT
 ========================================================= */
+
+.cup-section .match-grid {
+  margin-top: 26px;
+  display: grid;
+  gap: 22px;
+}
 
 .cup-card {
   --card-accent: var(--gold-500);
@@ -2196,14 +2204,19 @@ a.sponsor-logo:hover {
   position: relative;
   isolation: isolate;
   overflow: hidden;
+
   padding: 30px;
-  border: 1px solid rgba(226, 185, 59, 0.28);
+  border: 1px solid rgba(226, 185, 59, 0.34);
   border-radius: 27px;
+
   color: var(--text);
   background:
     radial-gradient(circle at 8% 0%, var(--card-soft), transparent 30%),
     linear-gradient(145deg, rgba(255, 255, 255, 0.99), rgba(247, 249, 252, 0.98));
-  box-shadow: var(--shadow-md);
+
+  box-shadow:
+    0 28px 70px rgba(3, 7, 18, 0.13),
+    0 0 0 1px rgba(255, 255, 255, 0.75);
 }
 
 .cup-card::before {
@@ -2223,7 +2236,7 @@ a.sponsor-logo:hover {
   height: 4px;
   border-radius: 0 0 999px 999px;
   background: linear-gradient(90deg, transparent, var(--card-accent), transparent);
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .cup-card.loss {
@@ -2231,51 +2244,219 @@ a.sponsor-logo:hover {
   --card-soft: rgba(220, 38, 38, 0.11);
 }
 
-.cup-topline {
-  margin-bottom: 26px;
+
+/* =========================================================
+   POKAL TOPLINJE
+========================================================= */
+
+.cup-card .match-topline {
+  margin-bottom: 28px;
+
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 20px;
 }
 
-.cup-ident {
+.cup-card .match-ident {
   display: flex;
   align-items: stretch;
   gap: 12px;
 }
 
-.cup-number {
-  min-width: 72px;
-  padding: 9px 11px;
+.cup-card .match-number {
+  min-width: 82px;
+  padding: 10px 12px;
+
   display: grid;
   place-items: center;
+
   border-radius: 14px;
-  color: var(--navy-950);
-  background: linear-gradient(135deg, var(--gold-400), var(--gold-500));
+  color: var(--loss);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow:
+    0 10px 22px rgba(3, 7, 18, 0.08),
+    inset 0 0 0 1px rgba(220, 38, 38, 0.10);
+
   font-size: 10px;
   font-weight: 950;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
-.cup-date {
-  display: grid;
-  align-content: center;
-  color: var(--muted);
+.cup-card .date {
+  min-height: 42px;
+  padding: 10px 15px;
+
+  display: inline-flex;
+  align-items: center;
+
+  border: 1px solid rgba(16, 24, 40, 0.08);
+  border-radius: 14px;
+
+  color: var(--navy-950);
+  background: rgba(255, 255, 255, 0.88);
+
   font-size: 13px;
-  font-weight: 750;
+  font-weight: 900;
 }
 
-.cup-round-badge {
-  padding: 9px 13px;
+
+/* Guld POKAL-boks */
+.cup-card .neutral-badge,
+.cup-card .cup-round-badge {
+  padding: 10px 15px;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
+  border: 1px solid rgba(226, 185, 59, 0.42);
   border-radius: 999px;
+
   color: var(--navy-950);
   background: linear-gradient(135deg, var(--gold-400), var(--gold-500));
+  box-shadow:
+    0 12px 28px rgba(226, 185, 59, 0.30),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+
   font-size: 10px;
+  font-weight: 950;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   POKAL HOLD / RESULTAT
+========================================================= */
+
+.cup-card .teams {
+  display: grid;
+  grid-template-columns: 82px minmax(0, 1fr) auto minmax(0, 1fr) 82px;
+  align-items: center;
+  gap: 18px;
+}
+
+.cup-card .teams img {
+  width: 82px;
+  height: 82px;
+  padding: 8px;
+
+  border-radius: 50%;
+  object-fit: contain;
+  background: var(--white);
+
+  box-shadow:
+    0 14px 30px rgba(3, 7, 18, 0.14),
+    0 0 0 1px rgba(16, 24, 40, 0.07);
+}
+
+.cup-card .teams strong {
+  color: var(--navy-950);
+  font-size: clamp(18px, 2vw, 27px);
+  font-weight: 950;
+  line-height: 1.08;
+  letter-spacing: -0.7px;
+}
+
+.cup-card .teams > div {
+  display: grid;
+  justify-items: center;
+  gap: 7px;
+}
+
+.cup-card .score.loss-score {
+  min-width: 122px;
+  padding: 11px 18px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  color: #ffffff;
+  background: linear-gradient(135deg, #b91c1c, #ef4444);
+
+  font-size: 26px;
+  font-weight: 950;
+  line-height: 1;
+  letter-spacing: 0.4px;
+
+  box-shadow:
+    inset 0 -3px 0 rgba(0, 0, 0, 0.16),
+    0 12px 26px rgba(220, 38, 38, 0.25);
+}
+
+.cup-card .result-label.loss-label {
+  color: var(--loss);
+  font-size: 9px;
+  font-weight: 950;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   POKAL HOLDKORT-KNAP
+========================================================= */
+
+.cup-card .lineup-toggle {
+  margin-top: 30px;
+}
+
+.cup-card .lineup-toggle summary {
+  border-color: rgba(226, 185, 59, 0.22);
+  background:
+    radial-gradient(circle at 88% 50%, rgba(226, 185, 59, 0.18), transparent 30%),
+    linear-gradient(135deg, var(--navy-950), var(--navy-800));
+}
+
+.cup-card .summary-copy small {
+  color: var(--gold-400);
+}
+
+.cup-card .summary-action {
+  color: var(--navy-950);
+  background: linear-gradient(135deg, var(--gold-400), var(--gold-500));
+}
+
+
+/* =========================================================
+   POKAL INFOBOKSE
+========================================================= */
+
+.cup-card .details {
+  margin-top: 20px;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.cup-card .details p {
+  min-height: 50px;
+  padding: 12px 14px;
+
+  border: 1px solid rgba(16, 24, 40, 0.08);
+  border-radius: 14px;
+
+  color: var(--navy-950);
+  background: rgba(255, 255, 255, 0.80);
+  box-shadow: 0 10px 24px rgba(3, 7, 18, 0.05);
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.cup-card .details b {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--green-700);
+  font-size: 8px;
   font-weight: 950;
   letter-spacing: 1.2px;
   text-transform: uppercase;
@@ -2283,103 +2464,41 @@ a.sponsor-logo:hover {
 
 
 /* =========================================================
-   POKAL RESULTAT / HOLD
+   KOMPATIBILITET MED GAMLE POKAL-KLASSER
 ========================================================= */
 
-.cup-teams {
-  display: grid;
-  grid-template-columns: 82px minmax(0, 1fr) auto minmax(0, 1fr) 82px;
-  align-items: center;
-  gap: 18px;
+.cup-shell {
+  width: min(100%, var(--container));
+  margin: 0 auto;
 }
 
-.cup-teams img {
-  width: 82px;
-  height: 82px;
-  padding: 8px;
-  border-radius: 50%;
-  object-fit: contain;
-  background: var(--white);
-  box-shadow:
-    0 12px 25px rgba(3, 7, 18, 0.13),
-    0 0 0 1px rgba(16, 24, 40, 0.07);
+.cup-heading {
+  margin-bottom: 32px;
 }
 
-.cup-teams strong {
-  font-size: clamp(18px, 2vw, 27px);
+.cup-heading h2 {
+  margin-top: 6px;
+  color: var(--navy-950);
+  font-size: clamp(38px, 4.8vw, 62px);
   font-weight: 950;
-  line-height: 1.08;
-  letter-spacing: -0.7px;
+  line-height: 0.95;
+  letter-spacing: -2.2px;
 }
 
-.cup-result {
-  display: grid;
-  justify-items: center;
-  gap: 7px;
+.cup-heading p {
+  max-width: 850px;
+  margin-top: 16px;
+  color: #1f2937;
+  font-size: 15px;
+  font-weight: 750;
+  line-height: 1.7;
 }
 
-.cup-score {
-  min-width: 122px;
-  padding: 11px 18px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 16px;
-  color: #ffffff;
-  background: linear-gradient(135deg, #b91c1c, #ef4444);
-  font-size: 26px;
-  font-weight: 950;
-  line-height: 1;
-  letter-spacing: 0.4px;
-  box-shadow:
-    inset 0 -3px 0 rgba(0, 0, 0, 0.16),
-    0 12px 26px rgba(220, 38, 38, 0.22);
-}
-
-.cup-result-label {
-  color: var(--loss);
-  font-size: 9px;
-  font-weight: 950;
-  letter-spacing: 1.3px;
-  text-transform: uppercase;
-}
-
-
-/* =========================================================
-   POKAL INFO
-========================================================= */
-
-.cup-meta {
-  margin-top: 26px;
-  padding-top: 22px;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 13px;
-  border-top: 1px solid rgba(16, 24, 40, 0.08);
-}
-
-.cup-meta-item {
-  padding: 14px 15px;
-  border: 1px solid rgba(16, 24, 40, 0.07);
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.72);
-}
-
-.cup-meta-item span {
-  display: block;
-  color: var(--green-700);
-  font-size: 9px;
-  font-weight: 950;
-  letter-spacing: 1.3px;
-  text-transform: uppercase;
-}
-
-.cup-meta-item strong {
-  display: block;
-  margin-top: 4px;
-  color: var(--text);
-  font-size: 13px;
-  font-weight: 850;
+.cup-badge,
+.cup-number,
+.cup-round-badge {
+  color: var(--navy-950);
+  background: linear-gradient(135deg, var(--gold-400), var(--gold-500));
 }
 
 
@@ -2388,24 +2507,25 @@ a.sponsor-logo:hover {
 ========================================================= */
 
 @media (max-width: 900px) {
+  .cup-section .section-header,
   .cup-heading {
     align-items: flex-start;
     flex-direction: column;
   }
 
-  .cup-teams {
+  .cup-card .teams {
     grid-template-columns: 1fr;
     justify-items: center;
     text-align: center;
   }
 
-  .cup-teams img {
+  .cup-card .teams img {
     width: 76px;
     height: 76px;
   }
 
-  .cup-meta {
-    grid-template-columns: 1fr;
+  .cup-card .details {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -2414,22 +2534,36 @@ a.sponsor-logo:hover {
     padding: 70px 14px 82px;
   }
 
+  .cup-section .section-header {
+    margin-bottom: 24px;
+  }
+
+  .cup-section .section-header h2,
+  .cup-heading h2 {
+    font-size: 38px;
+    letter-spacing: -1.4px;
+  }
+
   .cup-card {
     padding: 23px;
     border-radius: 23px;
   }
 
-  .cup-topline {
+  .cup-card .match-topline {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .cup-ident {
+  .cup-card .match-ident {
     flex-direction: column;
   }
 
-  .cup-score {
+  .cup-card .score.loss-score {
     min-width: 108px;
     font-size: 23px;
+  }
+
+  .cup-card .details {
+    grid-template-columns: 1fr;
   }
 }
