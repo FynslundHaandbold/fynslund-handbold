@@ -2272,11 +2272,17 @@ a.sponsor-logo:hover {
   place-items: center;
 
   border-radius: 14px;
-  color: var(--loss);
+
+  /* Guldfarvet tekst */
+  color: #b8860b;
+
+  /* Hvid baggrund */
   background: rgba(255, 255, 255, 0.92);
+
+  /* Skygge med guldkant */
   box-shadow:
     0 10px 22px rgba(3, 7, 18, 0.08),
-    inset 0 0 0 1px rgba(220, 38, 38, 0.10);
+    inset 0 0 0 1px rgba(226, 185, 59, 0.35);
 
   font-size: 10px;
   font-weight: 950;
